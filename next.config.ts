@@ -39,7 +39,9 @@ const nextConfig: NextConfig = {
   },
   output: 'export', // Включаем статический экспорт
   trailingSlash: true, // Добавляем слеш в конце путей
-  distDir: 'dist', // Папка для сборки
+  distDir: 'out', // Папка для сборки (стандарт для GitHub Pages)
+  basePath: process.env.NODE_ENV === 'production' ? '/Sold' : '', // Base path для GitHub Pages
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Sold/' : '', // Asset prefix для ресурсов
 };
 
 export default nextConfig;
